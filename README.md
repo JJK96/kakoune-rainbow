@@ -15,7 +15,9 @@ plug 'jjk96/kakoune-rainbow'
 
 # Usage
 
-execute `:rainbow` to highlight the current buffer.
+execute `:rainbow` to highlight the current buffer once.
+
+execute `:rainbow-enable` to highlight the current buffer continuously (note that this may be a bit laggy).
 
 execute `:rainbow-disable` to remove the highlighter
 

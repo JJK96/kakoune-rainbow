@@ -48,6 +48,12 @@ define-command -hidden rainbow-selection -params 1 %{
     }
 }
 
+define-command rainbow-enable %{
+    hook -group rainbow window InsertIdle .* %{ rainbow }
+    hook -group rainbow window NormalIdle .* %{ rainbow }
+}
+
 define-command rainbow-disable %{
     remove-highlighter window/ranges_rainbow
+    remove-hooks window rainbow
 }
