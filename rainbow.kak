@@ -38,6 +38,7 @@ define-command -hidden rainbow-selection -params 1 %{
                     set-option -add window rainbow \"%val{selection_desc}|$face\"
                 }
             }
+            execute-keys <a-K>\A..\z<ret> #if there is no content do not recurse
             evaluate-commands -itersel -draft %{
                 execute-keys H<a-\;>L
                 try %{
