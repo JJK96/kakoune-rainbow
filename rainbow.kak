@@ -2,8 +2,7 @@ declare-option -hidden range-specs rainbow
 declare-option regex rainbow_opening "[\[{(]"
 declare-option bool rainbow_highlight_background false
 
-declare-option str-list rainbow_faces "red" "green" "blue" "yellow" "purple"
-
+declare-option str-list rainbow_faces "bright-red" "bright-green" "bright-yellow" "bright-blue" "bright-magenta" "bright-cyan"
 
 define-command rainbow %{
     set-option window rainbow "%val{timestamp}"
