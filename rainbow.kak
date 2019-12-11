@@ -50,5 +50,5 @@ define-command -hidden rainbow-selection -params 1 %{
 }
 
 define-command rainbow-disable %{
-    remove-highlighter window/rainbow
+    remove-highlighter window/ranges_rainbow
 }
