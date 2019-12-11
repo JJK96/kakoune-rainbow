@@ -18,3 +18,18 @@ plug 'jjk96/kakoune-rainbow'
 execute `:rainbow` to highlight the current buffer.
 
 execute `:rainbow-disable` to remove the highlighter
+
+# Customization
+
+You can override the `rainbow_colors` option to set your own colors.
+
+Example:
+```
+set-option global rainbow_colors "rgb:ff0000" "rgb:00ff00" "rgb:0000ff"
+```
+
+You can also override the `rainbow_opening` option to set the opening parentheses regex.
+Example:
+```
+set-option global rainbow_opening "[\[{(<]"
+```
