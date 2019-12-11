@@ -19,13 +19,17 @@ execute `:rainbow` to highlight the current buffer.
 
 execute `:rainbow-disable` to remove the highlighter
 
+# Configuration
+
+The `rainbow_highlight_background` option sets whether the background of the part between braces should be highlighted.
+
 # Customization
 
-You can override the `rainbow_colors` option to set your own colors.
+You can override the `rainbow_faces` option to set your own faces.
 
 Example:
 ```
-set-option global rainbow_colors "rgb:ff0000" "rgb:00ff00" "rgb:0000ff"
+set-option global rainbow_faces "rgb:ff0000" "rgb:00ff00" "rgb:0000ff"
 ```
 
 You can also override the `rainbow_opening` option to set the opening parentheses regex.

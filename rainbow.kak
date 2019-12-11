@@ -1,7 +1,9 @@
-declare-option range-specs rainbow
+declare-option -hidden range-specs rainbow
 declare-option regex rainbow_opening "[\[{(]"
+declare-option bool rainbow_highlight_background false
 
-declare-option str-list rainbow_colors "red" "green" "blue" "yellow" "purple"
+declare-option str-list rainbow_faces "red" "green" "blue" "yellow" "purple"
+
 
 define-command rainbow %{
     set-option window rainbow "%val{timestamp}"
@@ -20,17 +22,21 @@ define-command rainbow %{
 define-command -hidden rainbow-selection -params 1 %{
     evaluate-commands %sh{
         index=$1
-        set -- "$kak_opt_rainbow_colors"
-        colors=( $@ )
-        length=${#colors[@]}
+        set -- "$kak_opt_rainbow_faces"
+        faces=( $@ )
+        length=${#faces[@]}
         next_index=$(( (index + 1) % length ))
-        color=${colors[index]}
+        face=${faces[index]}
+        select_ends=""
+        if ! $kak_opt_rainbow_highlight_background; then
+            select_ends="execute-keys <a-S>"
+        fi
         echo "
             execute-keys s<ret>m
             evaluate-commands -draft %{
-                execute-keys <a-S>
+                $select_ends
                 evaluate-commands -itersel %{
-                    set-option -add window rainbow \"%val{selection_desc}|$color\"
+                    set-option -add window rainbow \"%val{selection_desc}|$face\"
                 }
             }
             evaluate-commands -itersel -draft %{
