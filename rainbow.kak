@@ -22,11 +22,10 @@ define-command rainbow %{
 define-command -hidden rainbow-selection -params 1 %{
     evaluate-commands %sh{
         index=$1
-        set -- "$kak_opt_rainbow_faces"
-        faces=( $@ )
-        length=${#faces[@]}
+        set -- $kak_opt_rainbow_faces
+        length=$#
         next_index=$(( (index + 1) % length ))
-        face=${faces[index]}
+        eval face=\$$(( index + 1 ))
         select_ends=""
         if ! $kak_opt_rainbow_highlight_background; then
             select_ends="execute-keys <a-S>"
