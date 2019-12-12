@@ -9,7 +9,7 @@ define-command rainbow %{
     try %{
         add-highlighter window/ ranges rainbow
     }
-    evaluate-commands -draft %{
+    evaluate-commands -save-regs '/' -draft %{
         set-register / "%opt{rainbow_opening}"
         execute-keys \%
         try %{
