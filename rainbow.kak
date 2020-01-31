@@ -4,7 +4,7 @@ declare-option bool rainbow_highlight_background false
 
 declare-option str-list rainbow_faces "bright-red" "bright-green" "bright-yellow" "bright-blue" "bright-magenta" "bright-cyan"
 
-define-command rainbow %{
+define-command -docstring "highlight the current buffer once" rainbow %{
     set-option window rainbow "%val{timestamp}"
     try %{
         add-highlighter window/ ranges rainbow
@@ -49,12 +49,12 @@ define-command -hidden rainbow-selection -params 1 %{
     }
 }
 
-define-command rainbow-enable %{
+define-command -docstring "highlight the current buffer continuously" rainbow-enable %{
     hook -group rainbow window InsertIdle .* %{ rainbow }
     hook -group rainbow window NormalIdle .* %{ rainbow }
 }
 
-define-command rainbow-disable %{
+define-command -docstring "stop highlighting the current buffer" rainbow-disable %{
     remove-highlighter window/ranges_rainbow
     remove-hooks window rainbow
 }
