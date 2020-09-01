@@ -43,3 +43,4 @@ set-option global rainbow_opening "[\[{(<]"
 # Similar software
 
 - https://github.com/listentolist/kakoune-rainbow
+- https://github.com/Bodhizafa/kak-rainbow
