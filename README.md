@@ -4,6 +4,17 @@ A kakoune plugin like [rainbow](https://github.com/luochen1990/rainbow).
 
 Highlights pairs of parentheses in the same color, recursive pairs are highlighted in a different color.
 
+# Better alternatives
+
+This plugin is a first prototype, later others have made faster and better implementations.
+It's better to use one of the below plugins instead of this one.
+
+- https://github.com/listentolist/kakoune-rainbow
+- https://github.com/Bodhizafa/kak-rainbow
+- https://github.com/crizan/kak-rainbower
+
+View the discuss thread [here](https://discuss.kakoune.com/t/highlight-all-pairs-rainbow/811/17)
+
 # Install
 
 Add this plugin to your `autoload` folder.
@@ -39,8 +50,3 @@ Example:
 ```
 set-option global rainbow_opening "[\[{(<]"
 ```
-
-# Similar software
-
-- https://github.com/listentolist/kakoune-rainbow
-- https://github.com/Bodhizafa/kak-rainbow
